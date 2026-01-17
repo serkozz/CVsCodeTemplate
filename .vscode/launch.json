@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Bash on Windows Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "avoidWindowsConsoleRedirection": false, // Allows input to flow to the Terminal
+            "preLaunchTask": "CMake: build",
+            "setupCommands": [
+                {
+                    "description": "Skip standard library files",
+                    "text": "-interpreter-exec console \"skip -gfi **/ucrt64/include/c++/**\"",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Skip all system headers",
+                    "text": "-interpreter-exec console \"skip -gfi **/include/*.h\"",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                },
+                {
+                    "text": "set index-cache enabled on"
+                },
+                {
+                    "text": "set index-cache directory ${workspaceFolder}/.gdb_cache"
+                },
+            ]
+        },
+    ]
+}

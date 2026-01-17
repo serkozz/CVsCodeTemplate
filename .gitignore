@@ -1,0 +1,44 @@
+# === Build Artifacts ===
+# Ignore the entire build directory regardless of name
+build/
+out/
+bin/
+
+# Ninja-specific temporary files
+.ninja_log
+.ninja_deps
+
+# === CMake Generated Files ===
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# === Compiled Binaries & Objects ===
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.pdb
+*.stackdump
+
+# === IDE Specific (VS Code) ===
+# We track tasks.json/launch.json, but ignore user-specific caches
+.vscode/ipch/
+.vscode/.cmaketools.json
+.vscode/.browse.vc.db
+*.code-workspace
+.cache
+
+# === System Files ===
+Thumbs.db
+desktop.ini
+.DS_Store

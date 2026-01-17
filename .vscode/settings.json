@@ -1,0 +1,6 @@
+{
+    "cmake.generator": "Ninja",
+    "cmake.preferredGenerators": ["Ninja"],
+    "cmake.buildBeforeRun": true,
+    "cmake.revealLog": "error"
+}
